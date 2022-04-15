@@ -639,7 +639,8 @@ sub sync {
 	    $state = 'ok' if !instance_exists($job->{instance_id});
 
 	    if ($state eq "syncing" || $state eq "waiting") {
-		die "Job --source $param->{source} --name $param->{name} is already scheduled to sync\n";
+		#die "Job --source $param->{source} --name $param->{name} is already scheduled to sync\n";
+		exit;
 	    }
 
 	    $job->{state} = "waiting";
